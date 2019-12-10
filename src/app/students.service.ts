@@ -18,11 +18,11 @@ export class StudentsService {
   }
 
   deleteStudent(sId: number) {
-    return this.http.delete<Students[]>('http://www.chocomonks.com/delete.php?id=' + sId);
+    return this.http.delete<void>('http://www.chocomonks.com/delete.php?id=' + sId);
   }
 
   createStudent(student: Students[]) {
-    return this.http.post('http://www.chocomonks.com/insert.php', student);
+    return this.http.post<Students>('http://www.chocomonks.com/insert.php', student);
   }
 
 }
