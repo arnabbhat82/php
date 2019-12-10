@@ -21,7 +21,7 @@ export class StudentsService {
     return this.http.delete<void>('http://www.chocomonks.com/delete.php?id=' + sId);
   }
 
-  createStudent(student: Students[]) {
+  createStudent(student: Students) {
     return this.http.post<Students>('http://www.chocomonks.com/insert.php', student);
   }
 
