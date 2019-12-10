@@ -24,7 +24,7 @@ export class AddComponent implements OnInit {
 
   onSubmit() {
     this.studentService.createStudent(this.addForm.value)
-      .subscribe(data => console.log(data));
+      .subscribe(data => this.students.push(data));
 
   }
 
