@@ -1,0 +1,31 @@
+<div class="col-md-6">
+  <h2>Add Students</h2>
+  <form [formGroup]="addForm" novalidate class="form">
+    <!-- <div class="form-group">
+      <label for="sId">Student Id:</label>
+      <input type="number" formControlName="sId" placeholder="Students Id" class="form-control" name="sId">
+    </div> -->
+    <div class="form-group">
+      <label for="fName">Student First Name:</label>
+      <input type="text" formControlName="fName" placeholder="Students First Name" name="fName" class="form-control">
+    </div>
+    <div class="alert alert-danger" *ngIf="addForm.get('fName').hasError('required') && addForm.get('fName').touched">
+      Please enter First Name
+    </div>
+    <div class="form-group">
+      <label for="lName">Student Last Name:</label>
+      <input type="text" formControlName="lName" placeholder="Students Last Name" name="lName" class="form-control">
+    </div>
+    <div class="alert alert-danger" *ngIf="addForm.get('lName').hasError('required') && addForm.get('lName').touched">
+      Please enter Last Name
+    </div>
+    <div class="form-group">
+      <label for="email">Student Email:</label>
+      <input type="email" formControlName="email" placeholder="Students Email" name="email" class="form-control">
+    </div>
+    <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+      Please enter email
+    </div>
+    <button class="btn btn-success" (click)="onSubmit()">Save</button>
+  </form>
+</div>

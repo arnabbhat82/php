@@ -1,0 +1,22 @@
+<div id="theList">
+  <h2>The list</h2>
+  <!-- <ul>
+    <li *ngFor="let std of students">{{std.fName}} | {{std.lName}} </li>
+  </ul> -->
+</div>
+<div class="row std-list">
+  <div class="col-md-2 std-list">Id</div>
+  <div class="col-md-2 std-list">First Name</div>
+  <div class="col-md-2 std-list">Last Name</div>
+  <div class="col-md-2 std-list">Email</div>
+  <div class="col-md-2 std-list">Edit</div>
+  <div class="col-md-2 std-list">Delete</div>
+</div>
+<div class="row std-list" *ngFor="let std of students">
+  <div class="col-md-2 std-list">{{std.sId}}</div>
+  <div class="col-md-2 std-list">{{std.fName}}</div>
+  <div class="col-md-2 std-list">{{std.lName}}</div>
+  <div class="col-md-2 std-list">{{std.email}}</div>
+  <div class="col-md-2 std-list"><a href="" class="btn btn-success">edit</a></div>
+  <div class="col-md-2 std-list"><button class="btn btn-danger" (click)="delete(std)">Delete</button></div>
+</div>
