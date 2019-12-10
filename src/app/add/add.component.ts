@@ -10,7 +10,7 @@ import { Students } from '../students';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-  students: Students[];
+  students: Students[] = [];
 
   constructor(private formBuilder: FormBuilder, private studentService: StudentsService) { }
   addForm: FormGroup;
