@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Students } from './students';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -13,6 +13,9 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
+  private insertedData = new BehaviorSubject<Students>(null);
+  currentInsertedData = this.insertedData.asObservable();
+
   getStudents(): Observable<Students[]> {
     return this.http.get<Students[]>('http://www.chocomonks.com/list.php');
   }
@@ -23,6 +26,10 @@ export class StudentsService {
 
   createStudent(student: Students) {
     return this.http.post<Students>('http://www.chocomonks.com/insert.php', student);
+  }
+
+  changeInsertedData(dataRow: Students) {
+    this.insertedData.next(dataRow);
   }
 
 }

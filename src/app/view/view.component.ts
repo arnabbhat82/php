@@ -15,6 +15,10 @@ export class ViewComponent implements OnInit {
 
   ngOnInit() {
     this.getStudents();
+    // this.getInsertedData();
+  }
+  getInsertedData(): void {
+    this.studentsService.currentInsertedData.subscribe(data => this.students.push(data));
   }
 
   getStudents(): void {
