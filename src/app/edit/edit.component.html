@@ -1,7 +1,11 @@
 <div class="col-md-6">
-  <h2>Add Students</h2>
+  <h2>Edit Student</h2>
   <form [formGroup]="addForm" novalidate class="form">
-
+    <!-- <div class="form-group">
+      <label for="sId">Student Id:</label>
+      <input type="number" formControlName="sId" placeholder="Students Id" class="form-control" name="sId">
+    </div> -->
+    <input type="text" name="sId" formControlName="sId">
     <div class="form-group">
       <label for="fName">Student First Name:</label>
       <input type="text" formControlName="fName" placeholder="Students First Name" name="fName" class="form-control">
@@ -30,8 +34,8 @@
     <div class="alert alert-danger" *ngIf="addForm.get('price').hasError('required') && addForm.get('price').touched">
       Please enter price
     </div>
-    <button class="btn btn-success" (click)="onSubmit()">Save</button>
+    <button class="btn btn-success" (click)="update()">Edit Student</button>
   </form>
   <button class="btn btn-success" (click)="goToView()">Go to View</button>
-
+  {{ id }}
 </div>

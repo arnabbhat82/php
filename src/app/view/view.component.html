@@ -10,13 +10,15 @@
   <div class="col-md-2 std-list">Last Name</div>
   <div class="col-md-2 std-list">Email</div>
   <div class="col-md-2 std-list">Edit</div>
-  <div class="col-md-2 std-list">Delete</div>
+  <div class="col-md-2 std-list">Price</div>
 </div>
-<div class="row std-list" *ngFor="let std of students">
+<div class="row std-list" *ngFor="let std of students index as i">
   <div class="col-md-2 std-list">{{std.sId}}</div>
   <div class="col-md-2 std-list">{{std.fName}}</div>
   <div class="col-md-2 std-list">{{std.lName}}</div>
   <div class="col-md-2 std-list">{{std.email}}</div>
-  <div class="col-md-2 std-list"><a href="" class="btn btn-success">edit</a></div>
-  <div class="col-md-2 std-list"><button class="btn btn-danger" (click)="delete(std)">Delete</button></div>
+  <div class="col-md-2 std-list"><button class="btn btn-success" (click)="editStudent(std)">edit</button></div>
+  <!-- <div class="col-md-2 std-list"><button class="btn btn-danger" (click)="delete(std)">Delete</button></div> -->
+  <div class="col-md-2 std-list">{{std.price}}</div>
 </div>
+<button class="btn btn-success" (click)="goToAdd()">Add New Student</button>

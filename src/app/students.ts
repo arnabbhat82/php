@@ -3,4 +3,5 @@ export class Students {
   fName: string;
   lName: string;
   email: string;
+  price: number;
 }

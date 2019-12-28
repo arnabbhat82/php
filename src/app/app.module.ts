@@ -8,18 +8,16 @@ import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditComponent } from './edit/edit.component';
 
-export const routes: Routes = [
-  { path: '', component: ViewComponent, pathMatch: 'full' },
-  { path: 'view', component: ViewComponent },
-  { path: 'add', component: AddComponent },
-];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    ViewComponent
+    ViewComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +25,7 @@ export const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

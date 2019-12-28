@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../students.service';
 import { Students } from '../students';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -8,14 +9,15 @@ import { Students } from '../students';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-  students: Students[];
+  students: Students[] = [];
   error: any;
+  id: number;
 
-  constructor(private studentsService: StudentsService) { }
+  constructor(private studentsService: StudentsService, private router: Router) { }
 
   ngOnInit() {
     this.getStudents();
-    // this.getInsertedData();
+    this.getInsertedData();
   }
   getInsertedData(): void {
     this.studentsService.currentInsertedData.subscribe(data => this.students.push(data));
@@ -38,6 +40,16 @@ export class ViewComponent implements OnInit {
         this.students = this.students.filter(u => u !== students);
       });
     console.log(students.sId);
+  }
+  editStudent(students: Students) {
+    this.id = students.sId;
+    console.log(students.sId);
+    // , { queryParams: { id: students.sId } }
+    this.router.navigate(['edit/' + this.id]);
+  }
+
+  goToAdd() {
+    this.router.navigate(['add']);
   }
 
 }
