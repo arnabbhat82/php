@@ -4,4 +4,5 @@ export class Students {
   lName: string;
   email: string;
   price: number;
+  quantity: number;
 }

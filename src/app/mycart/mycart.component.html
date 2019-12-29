@@ -1,0 +1,11 @@
+Total value is: {{allTotal}}
+<table>
+  <tr *ngFor="let stud of studentAddedTocart;let q = index">
+    <td class="text-center">{{stud.fName}}</td>
+    <td>{{stud.price}}</td>
+    <td><button type="button" (click)="onAddQuantity(stud)" class="btn btn-success">+</button> </td>
+    <td><input type="text" [ngModel]="stud.quantity" (ngModelChange)="stud.quantity=$event"
+        class="form-control form-inline" id="count"></td>
+    <td><button type="button" (click)="onRemoveQuantity(stud)" class="btn btn-danger">-</button></td>
+  </tr>
+</table>

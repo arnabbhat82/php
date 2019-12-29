@@ -9,6 +9,8 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './edit/edit.component';
+import { HeaderComponent } from './header/header.component';
+import { MycartComponent } from './mycart/mycart.component';
 
 
 
@@ -17,7 +19,9 @@ import { EditComponent } from './edit/edit.component';
     AppComponent,
     AddComponent,
     ViewComponent,
-    EditComponent
+    EditComponent,
+    HeaderComponent,
+    MycartComponent
   ],
   imports: [
     BrowserModule,

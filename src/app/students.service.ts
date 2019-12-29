@@ -41,6 +41,15 @@ export class StudentsService {
   updateStudent(student: Students) {
     return this.http.put('http://www.chocomonks.com/edit_student.php' + '?id=' + student.sId, student);
   }
+  getStudentFromCart() {
+    return JSON.parse(localStorage.getItem('student'));
+  }
+  addStudentToCart(students: any) {
+    localStorage.setItem('student', JSON.stringify(students));
+  }
+  removeAllStudentFromCart() {
+    return localStorage.removeItem('student');
+  }
 
   editStudent(modifiedStudent: Students) {
     const { sId, ...studentRest } = modifiedStudent;
